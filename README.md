@@ -7,20 +7,26 @@ yarn add themed-cli
 ### Usage
 
 ```js
-const {info, warn, log, error} = require('themed-cli)
+const {info, warn, log, error} = require('themed-cli')
 ```
 
 Each of the above functions have 3 modes of operation. I will be explaining using info function.
 
 1. Custom badge text and message
+```js
    info('INFORMATION', 'Lorem ipsum dolor sit amet');
+```
 2. Default badge text and message
-   info('Lorem ipsum dolor sit amet)
+```js
+   info('Lorem ipsum dolor sit amet')
+```
 3. Only message text
-   info('Lorem ipsum dolor sit amet)
+```js
+   info('Lorem ipsum dolor sit amet')
+```
 
 ```js
-const {indent} = require('themed-cli);
+const {indent} = require('themed-cli');
 ```
 
 This function is used to position the cursor according to your choice using
