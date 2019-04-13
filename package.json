@@ -1,0 +1,21 @@
+{
+	"name": "themed-cli",
+	"version": "0.0.0-dev",
+	"description": "Material themed cli for my Node JS projects",
+	"main": "index.js",
+	"scripts": {
+		"play": "node playground.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/anooprav7/themed-cli"
+	},
+	"keywords": [
+		"color-cli"
+	],
+	"author": "anooprav7@gmail.com",
+	"license": "MIT",
+	"dependencies": {
+		"chalk": "2.4.2"
+	}
+}
