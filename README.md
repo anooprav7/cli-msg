@@ -7,3 +7,4 @@ TODO
 Specifications
 
 -   if only one arguement its message only, if 2, then title in badge and message
+-   expose chalk also to override defaults
