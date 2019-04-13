@@ -74,4 +74,4 @@ const info = printToConsole('info');
 const warn = printToConsole('warn');
 const log = printToConsole('log');
 const error = printToConsole('error');
-module.exports = { info, warn, log, error, indent, chalk };
+module.exports = { info, warn, log, error, indent };
