@@ -1,54 +1,12 @@
 const chalk = require('chalk');
 const clog = console.log;
 
-// https://www.materialui.co/flatuicolors
-const materialColorMap = {
-	white: '#fff',
-	black: '#000',
-	// Logs
-	peterriver: '#3498db',
-	belizehole: '#2980b9',
-
-	// Warning
-	orange: '#f39c12',
-	sunflower: '#f1c40f',
-
-	// Info
-	emerland: '#2ecc71',
-	nephiritis: '#27ae60',
-
-	// Error
-	alizarin: '#e74c3c',
-	pomegrante: '#c0392b'
-};
-
-const defaultColorMap = {
-	error: {
-		badge: materialColorMap.pomegrante,
-		message: materialColorMap.alizarin,
-		contrastText: materialColorMap.white
-	},
-	warn: {
-		badge: materialColorMap.orange,
-		message: materialColorMap.sunflower,
-		contrastText: materialColorMap.white
-	},
-	log: {
-		badge: materialColorMap.belizehole,
-		message: materialColorMap.peterriver,
-		contrastText: materialColorMap.white
-	},
-	info: {
-		badge: materialColorMap.nephiritis,
-		message: materialColorMap.emerland,
-		contrastText: materialColorMap.white
-	}
-};
+const defaultColorMap = require('./defaultColorMap');
 
 function initialiseAndReturnMessageTypeFunction(type, typeColorMap) {
 	// add optional colorMap here
 	const badgeColor = typeColorMap.badge ? typeColorMap.badge : typeColorMap.message;
-	const contrastTextColor = typeColorMap.contrastText ? typeColorMap.contrastText : typeColorMap.message;
+	const contrastTextColor = typeColorMap.contrastText ? typeColorMap.contrastText : '#000';
 	const messageColor = typeColorMap.message;
 
 	const badgeStyle = chalk.bgHex(badgeColor).hex(contrastTextColor).bold;
@@ -62,6 +20,8 @@ function initialiseAndReturnMessageTypeFunction(type, typeColorMap) {
 		clog(messageStyle(`${message}`));
 	};
 	messageTypeFunction.b = function(message) {
+		const info = initialiseAndReturnMessageTypeFunction('info', defaultColorMap['info']);
+		if (!typeColorMap.badge) info(`'badge' color key missing in '${type}' type. Using message color instead`);
 		clog(badgeStyle(`${message}`));
 	};
 	return messageTypeFunction;
@@ -86,6 +46,7 @@ function initialiseThemedCLI(colorMap = {}) {
 	const mergedColorMap = Object.assign({}, defaultColorMap, colorMap);
 	if (isValidColorMap(colorMap)) {
 		let themed = {};
+		themed.indent = indent;
 		Object.keys(mergedColorMap).map(type => {
 			themed[type] = initialiseAndReturnMessageTypeFunction([type], colorMap[type]);
 		});
@@ -115,7 +76,6 @@ function isValidColorMap(colorMap) {
 
 module.exports = {
 	...initialiseThemedCLI(defaultColorMap),
-	indent,
 	initialiseThemedCLI,
 	isValidColorMap
 };
