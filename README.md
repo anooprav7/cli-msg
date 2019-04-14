@@ -2,6 +2,7 @@
 
 ```
 yarn add themed-cli
+npm install themed-cli --save
 ```
 
 ### Usage
@@ -9,6 +10,8 @@ yarn add themed-cli
 ```js
 const { info, warn, log, error } = require('themed-cli');
 ```
+
+Default contrastTextColor is black
 
 Each of the above functions have 3 modes of operation. I will be explaining using info function.
 
@@ -49,12 +52,16 @@ indent
 	.tab(2)
 	.space(5);
 ```
+### Images needed
+-	badge and message
+-	default look and feel
+-	positioning on cli
+- 	Custom look and feel
+
 
 ### TODO
 
 -   Add table cli like create-react-app
--   Custom theme colors add
--   Custom function add feature
 -   Divider - dotted, dashed
 -   only badge text like cra header while showing warnings - info.b
 
