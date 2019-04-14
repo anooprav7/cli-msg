@@ -1,6 +1,6 @@
 {
 	"name": "themed-cli",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"description": "Material themed cli for my Node JS projects",
 	"main": "index.js",
 	"scripts": {
@@ -18,6 +18,10 @@
 		"print",
 		"console.log",
 		"log"
+	],
+	"files": [
+		"./index.js",
+		"./defaultColorMap.js"
 	],
 	"author": "anooprav7@gmail.com",
 	"license": "MIT",
