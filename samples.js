@@ -41,8 +41,11 @@ indent.nl(1).tab(TAB_LENGTH);
 
 info('badge text', 'message text here ');
 
+indent.nl(3);
+warn.b('Lorem ipsum dolor sit amet');
 indent
-	.nl(5)
+	.nl(2)
 	.tab(3)
 	.space(5);
-info('INFO');
+error.b('Lorem ipsum dolor sit amet');
+indent.nl(3);
