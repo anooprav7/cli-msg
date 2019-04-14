@@ -4,11 +4,11 @@
 yarn add themed-cli
 
 npm install themed-cli --save
-
 ```
 
 ### Usage
 
+#### Message type usage
 ```js
 const { info } = require('themed-cli');
 
@@ -25,9 +25,25 @@ Same applies to warn, log, error or any custom defined types.
 const { info, warn, log, error } = require('themed-cli');
 ```
 
+#### indent
+
+This function is used to position the cursor according to your choice using
+
+1. nl - newline (/n)
+2. tab - tab (/t)
+3. space - space (' ')
+
+The inner functions are cascaded.
 ```js
 const { indent } = require('themed-cli');
+
+indent
+	.nl(4)     // New Line
+	.tab(2)    // Tab Space
+	.space(5); // Space 
 ```
+
+#### Custom message types
 
 ```js
 const { initialiseThemedCLI } = require('themed-cli');
@@ -60,20 +76,12 @@ info('Lorem ipsum dolor sit amet');
 const { indent } = require('themed-cli');
 ```
 
-This function is used to position the cursor according to your choice using
 
-1. nl - newline (/n)
-2. tab - tab (/t)
-3. space - space (' ')
 
-The inner functions are cascaded.
 Sample usage
 
 ```js
-indent
-	.nl(4)     // New Line
-	.tab(2)    // Tab Space
-	.space(5); // Space 
+
 ```
 ### Images needed
 -	badge and message
