@@ -54,8 +54,9 @@ indent
 
 -   Add table cli like create-react-app
 -   Custom theme colors add
--   Custom function add
+-   Custom function add feature
 -   Divider - dotted, dashed
+-   only badge text like cra header while showing warnings - info.b
 
 ### License
 

@@ -3,6 +3,9 @@
 	"version": "0.0.2",
 	"description": "Material themed cli for my Node JS projects",
 	"main": "index.js",
+	"scripts": {
+		"test": "jest --silent"
+	},
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/anooprav7/themed-cli"
@@ -14,5 +17,8 @@
 	"license": "MIT",
 	"dependencies": {
 		"chalk": "2.4.2"
+	},
+	"devDependencies": {
+		"jest": "24.7.1"
 	}
 }
