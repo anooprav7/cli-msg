@@ -2,14 +2,37 @@
 
 ```
 yarn add themed-cli
+
 npm install themed-cli --save
+
 ```
 
 ### Usage
 
 ```js
+const { info } = require('themed-cli');
+
+info( <badge-text>, <message-text> ) // 
+info( <message-text> )               // 'INFO' is set as <badge-text>
+info.b( <only-badge-style-text> )    // Only badge style text, no message text
+info.m( <only-message-style-text> )  // Only message style text, no badge text
+
+Same applies to warn, log, error or any custom defined types.
+
+```
+
+```js
 const { info, warn, log, error } = require('themed-cli');
 ```
+
+```js
+const { indent } = require('themed-cli');
+```
+
+```js
+const { initialiseThemedCLI } = require('themed-cli');
+```
+
 
 Default contrastTextColor is black
 
@@ -48,9 +71,9 @@ Sample usage
 
 ```js
 indent
-	.nl(4)
-	.tab(2)
-	.space(5);
+	.nl(4)     // New Line
+	.tab(2)    // Tab Space
+	.space(5); // Space 
 ```
 ### Images needed
 -	badge and message
@@ -67,4 +90,4 @@ indent
 
 ### License
 
-MIT © [anooprav7](https://github.com/anooprav7)
+MIT
