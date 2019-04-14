@@ -1,7 +1,7 @@
 {
 	"name": "themed-cli",
 	"version": "0.1.0",
-	"description": "Material themed cli for my Node JS projects",
+	"description": "Customizable theme based Terminal log messages",
 	"main": "index.js",
 	"scripts": {
 		"test": "jest --silent"
@@ -23,6 +23,9 @@
 		"index.js",
 		"defaultColorMap.js"
 	],
+	"bugs": {
+		"url": "https://github.com/anooprav7/themed-cli/issues"
+	},
 	"author": "anooprav7@gmail.com",
 	"license": "MIT",
 	"dependencies": {
