@@ -14,7 +14,8 @@ function initialiseAndReturnMessageTypeFunction(type, typeColorMap) {
 
 	function messageTypeFunction(...args) {
 		if (args.length === 1) clog(badgeStyle(` ${type.toString().toUpperCase()} `) + messageStyle(` ${args[0]}`));
-		else if (args.length > 1) clog(badgeStyle(` ${args[0]} `) + messageStyle(` ${args[1]}`));
+		else if (args.length > 1)
+			clog(badgeStyle(` ${args[0].toString().toUpperCase()} `) + messageStyle(` ${args[1]}`));
 	}
 	messageTypeFunction.m = function(message) {
 		clog(messageStyle(`${message}`));
@@ -83,7 +84,7 @@ module.exports = {
 
 /*
 Usage
-    
+
     info
     log 
     error
