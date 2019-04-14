@@ -116,18 +116,10 @@ const customColorMap = {
 const { info, warn, log, error, caution, indent } = initialiseThemedCLI(customColorMap)
 ```
 
-## Images needed
--	badge and message
--	default look and feel
--	positioning on cli
-- 	Custom look and feel
-
-
 ## TODO
 
 -   Add table cli like create-react-app
 -   Divider - dotted, dashed
--   only badge text like cra header while showing warnings - info.b
 
 ## [License](LICENSE)
 
