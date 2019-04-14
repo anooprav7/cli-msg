@@ -98,6 +98,6 @@ Sample usage
 -   Divider - dotted, dashed
 -   only badge text like cra header while showing warnings - info.b
 
-## License
+## [License](LICENSE)
 
 MIT
