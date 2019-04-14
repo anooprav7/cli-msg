@@ -1,4 +1,6 @@
-### Install
+# themed-cli
+
+## Install
 
 ```
 yarn add themed-cli
@@ -6,9 +8,9 @@ yarn add themed-cli
 npm install themed-cli --save
 ```
 
-### Usage
+## Usage
 
-#### Message type usage
+### Message type usage
 ```js
 const { info } = require('themed-cli');
 
@@ -25,7 +27,7 @@ Same applies to warn, log, error or any custom defined types.
 const { info, warn, log, error } = require('themed-cli');
 ```
 
-#### indent
+### indent
 
 This function is used to position the cursor according to your choice using
 
@@ -43,7 +45,7 @@ indent
 	.space(5); // Space 
 ```
 
-#### Custom message types
+### Custom message types
 
 ```js
 const { initialiseThemedCLI } = require('themed-cli');
@@ -83,19 +85,19 @@ Sample usage
 ```js
 
 ```
-### Images needed
+## Images needed
 -	badge and message
 -	default look and feel
 -	positioning on cli
 - 	Custom look and feel
 
 
-### TODO
+## TODO
 
 -   Add table cli like create-react-app
 -   Divider - dotted, dashed
 -   only badge text like cra header while showing warnings - info.b
 
-### License
+## License
 
 MIT
