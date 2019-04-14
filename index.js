@@ -29,6 +29,7 @@ function initialiseAndReturnMessageTypeFunction(type, typeColorMap) {
 
 const indent = {
 	nl: function(count) {
+		// New line
 		for (let i = 0; i < count; i++) process.stdout.write('\n');
 		return this;
 	},
@@ -79,3 +80,20 @@ module.exports = {
 	initialiseThemedCLI,
 	isValidColorMap
 };
+
+/*
+Usage
+    
+    info
+    log 
+    error
+    warn
+    indent
+colorMap
+    sample
+    schema
+        badge - badge and contrast color
+        message
+        mandatory fields
+
+*/
