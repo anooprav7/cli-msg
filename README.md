@@ -1,4 +1,5 @@
 # themed-cli
+![Home](/images/home.png) !
 
 ## Install
 
@@ -7,9 +8,13 @@ yarn add themed-cli
 
 npm install themed-cli --save
 ```
+## Naming conventions
+![Home](/images/badge.png) !
+
+- Badge text refers to the text with a colored background
+- Message text refers to the text with the transparent background and to the right of the Badge text.
 
 ## Usage
-[[https://github.com/anooprav7/themed-cli/blob/master/images/home.png]]
 
 ### Message type usage
 ```js
