@@ -28,3 +28,12 @@ describe('ColorMap Validation', () => {
 		).toBe(false);
 	});
 });
+describe('type addition', () => {
+	test('Add caution type', () => {
+		const colorMap = {
+			caution: { message: '#efefef' }
+		};
+		const newThemeCLI = initialiseThemedCLI(colorMap);
+		expect(newThemeCLI.caution).toEqual(expect.anything());
+	});
+});

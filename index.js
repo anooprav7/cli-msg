@@ -4,7 +4,6 @@ const clog = console.log;
 const defaultColorMap = require('./defaultColorMap');
 
 function initialiseAndReturnMessageTypeFunction(type, typeColorMap) {
-	// add optional colorMap here
 	const badgeColor = typeColorMap.badge ? typeColorMap.badge : typeColorMap.message;
 	const contrastTextColor = typeColorMap.contrastText ? typeColorMap.contrastText : '#000';
 	const messageColor = typeColorMap.message;
@@ -50,7 +49,7 @@ function initialiseThemedCLI(colorMap = {}) {
 		let themed = {};
 		themed.indent = indent;
 		Object.keys(mergedColorMap).map(type => {
-			themed[type] = initialiseAndReturnMessageTypeFunction([type], colorMap[type]);
+			themed[type] = initialiseAndReturnMessageTypeFunction([type], mergedColorMap[type]);
 		});
 		return themed;
 	}
@@ -63,7 +62,7 @@ function isValidColorMap(colorMap) {
 		let isValid = true;
 		Object.keys(colorMap).every(type => {
 			if (!colorMap[type].message) {
-				console.log('cmap', type);
+				//console.log('cmap', type);
 				isValid = false;
 				error(`Mandatory 'message' color key missing in '${type}' type`);
 				return false;
