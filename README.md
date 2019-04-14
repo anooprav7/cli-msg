@@ -62,10 +62,12 @@ indent
 
 ### Custom message types with color Maps
 
+The new color map gets merged with the default one
+
 ```js
 const { initialiseThemedCLI } = require('themed-cli');
 
-const colorMap = {
+const customColorMap = {
 	error: {
 		badge: '#c0392b',
 		message: '#e74c3c',
@@ -91,6 +93,24 @@ const colorMap = {
 const { info, warn, log, error, indent } = initialiseThemedCLI(customColorMap)
 ```
 - Only mandatory field for each type is 'message'
+
+### Add New types
+ To add new types like caution etc, just add it to the color Map and viola, ready to import and use.
+ 
+##### Sample usage
+```js
+const { initialiseThemedCLI } = require('themed-cli');
+
+const customColorMap = {
+	caution: {
+		badge: '#c0392b',
+		message: '#e74c3c',
+		contrastText: '#fff'
+	}
+};
+
+const { info, warn, log, error, caution, indent } = initialiseThemedCLI(customColorMap)
+```
 
 ## Images needed
 -	badge and message
