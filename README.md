@@ -54,11 +54,15 @@ The inner functions are cascaded.
 ```js
 const { indent } = require('themed-cli');
 
+warn.b('Lorem ipsum dolor sit amet');
 indent
-	.nl(4)     // New Line
-	.tab(2)    // Tab Space
+	.nl(2)     // New Line
+	.tab(3)    // Tab Space
 	.space(5); // Space 
+error.b('Lorem ipsum dolor sit amet');
 ```
+
+![Indent](/images/indent.png)
 
 ### Custom message types with color Maps
 
