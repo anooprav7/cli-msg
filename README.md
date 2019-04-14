@@ -9,6 +9,7 @@ npm install themed-cli --save
 ```
 
 ## Usage
+[[https://github.com/anooprav7/themed-cli/blob/master/images/home.png]]
 
 ### Message type usage
 ```js
