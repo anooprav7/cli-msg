@@ -12,13 +12,13 @@ describe('Export has all the default functions', () => {
 });
 
 describe('ColorMap Validation', () => {
-	test('Check if valid Color Map - Array', () => {
+	test('Datatype - Array', () => {
 		expect(isValidColorMap([1, 2, 3])).toBe(false);
 	});
-	test('Check if valid Color Map- String', () => {
+	test('Datatype - String', () => {
 		expect(isValidColorMap('#fff')).toBe(false);
 	});
-	test('Check if valid Color Map- String', () => {
+	test('Mandatory message key missing check', () => {
 		expect(
 			isValidColorMap({
 				tired: {
@@ -28,7 +28,7 @@ describe('ColorMap Validation', () => {
 		).toBe(false);
 	});
 });
-describe('type addition', () => {
+describe('Type addition and its presence', () => {
 	test('Add caution type', () => {
 		const colorMap = {
 			caution: { message: '#efefef' }
