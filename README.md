@@ -118,6 +118,8 @@ const { info, warn, log, error, caution, indent } = initialiseThemedCLI(customCo
 
 ## TODO
 
+-   Add success by default
+-   In every type add indent capability
 -   Add table cli like create-react-app
 -   Divider - dotted, dashed
 
