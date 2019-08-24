@@ -7,7 +7,7 @@
 	"scripts": {
 		"test": "jest ",
 		"build": "node scripts/prepareBuild.js",
-		"publish": "cd build/ && npm publish --public",
+		"publish": "yarn build && cd build/ && npm publish --public",
 		"sample": "node sampleUsage.js"
 	},
 	"repository": {

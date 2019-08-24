@@ -16,7 +16,7 @@ npm install cli-msg --save
 
 #### Badge
 
-![Badge Image](https://cdn.jsdelivr.net/gh/anooprav7/cli-msg@master/docs/images/badge.png)
+![Badge Image](https://cdn.jsdelivr.net/gh/anooprav7/cli-msg@master/docs/images/many_arguments.png)
 
 -   Badge text refers to the text with primary color applied to the background.
 
@@ -34,7 +34,7 @@ npm install cli-msg --save
 const { success } = require('cli-msg');
 
 // only 1 argument
-success( <message-text> )
+success('Lorem ipsum dolor sit amet');
 ```
 
 ![One Argument](https://cdn.jsdelivr.net/gh/anooprav7/cli-msg@master/docs/images/one_argument.png)
@@ -42,7 +42,7 @@ success( <message-text> )
 ```js
 // 2 or more arguments
 // 1st argument is shown in badge text and remaining args shown as one message
-success( <badge-text>, <message-text>[..] )
+success('Lorem', 'ipsum', ' dolor', ' sit', ' amet');
 ```
 
 ![Many Arguments](https://cdn.jsdelivr.net/gh/anooprav7/cli-msg@master/docs/images/many_arguments.png)
@@ -51,7 +51,7 @@ success( <badge-text>, <message-text>[..] )
 // Specific message styles
 // b - badge style type
 // Only badge style text, no message text
-success.b( <only-badge-style-text> )
+success.b('Lorem ipsum dolor sit amet');
 ```
 
 ![b Function](https://cdn.jsdelivr.net/gh/anooprav7/cli-msg@master/docs/images/b.png)
@@ -59,7 +59,8 @@ success.b( <only-badge-style-text> )
 ```js
 // m - message style type
 // Only message style text, no badge text
-success.m( <only-message-style-text> )
+// All arguments are joined together for the message
+success.m('Lorem ipsum dolor', ' sit amet');
 ```
 
 ![m Function](https://cdn.jsdelivr.net/gh/anooprav7/cli-msg@master/docs/images/m.png)
@@ -67,7 +68,7 @@ success.m( <only-message-style-text> )
 ```js
 // wb - with default badge - Eg. info will have 'INFO' as the badge text
 // message with badge text 'SUCCESS'
-success.wb( <only-message-style-text> )
+success.wb('Lorem ipsum dolor sit amet)
 ```
 
 ![wb Function](https://cdn.jsdelivr.net/gh/anooprav7/cli-msg@master/docs/images/wb.png)
