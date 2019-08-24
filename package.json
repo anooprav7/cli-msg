@@ -1,13 +1,12 @@
 {
 	"name": "cli-msg",
-	"version": "0.1.0",
+	"version": "0.1.4",
 	"description": "Customizable theme based Terminal log messages",
 	"main": "index.js",
 	"sideEffects": false,
 	"scripts": {
 		"test": "jest ",
 		"build": "node scripts/prepareBuild.js",
-		"publish": "yarn build && cd build/ && npm publish --public",
 		"sample": "node sampleUsage.js"
 	},
 	"repository": {
@@ -25,7 +24,8 @@
 	],
 	"files": [
 		"index.js",
-		"defaultColorMap.js"
+		"defaultColorMap.js",
+		"utils.js"
 	],
 	"bugs": {
 		"url": "https://github.com/anooprav7/cli-msg/issues"

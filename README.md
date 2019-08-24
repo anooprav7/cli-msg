@@ -68,7 +68,7 @@ success.m('Lorem ipsum dolor', ' sit amet');
 ```js
 // wb - with default badge - Eg. info will have 'INFO' as the badge text
 // message with badge text 'SUCCESS'
-success.wb('Lorem ipsum dolor sit amet)
+success.wb('Lorem ipsum dolor sit amet');
 ```
 
 ![wb Function](https://cdn.jsdelivr.net/gh/anooprav7/cli-msg@master/docs/images/wb.png)
