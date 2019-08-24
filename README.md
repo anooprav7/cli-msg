@@ -1,6 +1,6 @@
 # cli-msg
 
-![Home](https://cdn.jsdelivr.net/gh/anooprav7/cli-msg@master/docs/images/home.png)
+> Colored CLI messages for better log messages
 
 ## Install
 
@@ -52,17 +52,23 @@ success( <badge-text>, <message-text>[..] )
 success.b( <only-badge-style-text> )
 ```
 
+![b Function](https://cdn.jsdelivr.net/gh/anooprav7/cli-msg@master/docs/images/b.png)
+
 ```js
 // m - message style type
 // Only message style text, no badge text
 success.m( <only-message-style-text> )
 ```
 
+![m Function](https://cdn.jsdelivr.net/gh/anooprav7/cli-msg@master/docs/images/m.png)
+
 ```js
 // wb - with default badge - Eg. info will have 'INFO' as the badge text
 // message with badge text 'SUCCESS'
 success.wb( <only-message-style-text> )
 ```
+
+![wb Function](https://cdn.jsdelivr.net/gh/anooprav7/cli-msg@master/docs/images/wb.png)
 
 #### Same applies to success, warn, log, error, info message types.
 
@@ -89,7 +95,7 @@ indent
 error.b('Lorem ipsum dolor sit amet');
 ```
 
-![Indent image](/docs/images/indent.png)
+![Indent Function](https://cdn.jsdelivr.net/gh/anooprav7/cli-msg@master/docs/images/indent.png)
 
 ## [License](LICENSE)
 
