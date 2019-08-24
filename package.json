@@ -1,13 +1,15 @@
 {
 	"name": "cli-msg",
-	"version": "0.1.4",
+	"version": "1.0.0",
 	"description": "Customizable theme based Terminal log messages",
 	"main": "index.js",
 	"sideEffects": false,
 	"scripts": {
 		"test": "jest ",
 		"build": "node scripts/prepareBuild.js",
-		"sample": "node sampleUsage.js"
+		"sample": "node sampleUsage.js",
+		"publish.package": "cd build/ && npm publish --public",
+		"bp": "yarn build && yarn publish.package"
 	},
 	"repository": {
 		"type": "git",
