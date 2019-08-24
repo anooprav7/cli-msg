@@ -1,8 +1,17 @@
-const { info, warn, log, error, indent } = require('./index');
+const { success, info, warn, log, error, indent } = require('./index');
 
 const TAB_LENGTH = 3;
 
 indent.nl(3).tab(TAB_LENGTH);
+success('Lorem ipsum dolor sit amet');
+indent.tab(TAB_LENGTH);
+success('Lorem', 'Lorem ipsum dolor sit amet');
+indent.tab(TAB_LENGTH);
+success.m('Lorem ipsum dolor sit amet');
+indent.tab(TAB_LENGTH);
+success.b('Lorem ipsum dolor sit amet');
+indent.nl(1).tab(TAB_LENGTH);
+
 info('Lorem ipsum dolor sit amet');
 indent.tab(TAB_LENGTH);
 info('Lorem', 'Lorem ipsum dolor sit amet');

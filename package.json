@@ -3,8 +3,10 @@
 	"version": "0.1.0",
 	"description": "Customizable theme based Terminal log messages",
 	"main": "index.js",
+	"sideEffects": false,
 	"scripts": {
-		"test": "jest --silent"
+		"test": "jest --silent",
+		"build": "node scripts/prepareBuild.js"
 	},
 	"repository": {
 		"type": "git",
@@ -33,7 +35,8 @@
 	},
 	"devDependencies": {
 		"cz-conventional-changelog": "3.0.2",
-		"jest": "24.7.1"
+		"jest": "24.7.1",
+		"rimraf": "^3.0.0"
 	},
 	"config": {
 		"commitizen": {

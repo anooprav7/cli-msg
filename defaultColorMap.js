@@ -1,45 +1,37 @@
-// https://www.materialui.co/flatuicolors
-const materialColorMap = {
-	white: '#fff',
-	black: '#000',
-	// Logs
-	peterriver: '#3498db',
-	belizehole: '#2980b9',
+// https://github.com/chalk/chalk#256-and-truecolor-color-support
 
-	// Warning
-	orange: '#f39c12',
-	sunflower: '#f1c40f',
-
-	// Info
-	emerland: '#2ecc71',
-	nephiritis: '#27ae60',
-
-	// Error
-	alizarin: '#e74c3c',
-	pomegrante: '#c0392b'
+const colors = {
+	black: 'black',
+	red: 'red',
+	green: 'green',
+	yellow: 'yellow',
+	blue: 'blue',
+	magenta: 'magenta',
+	cyan: 'cyan',
+	white: 'white'
 };
 
-const defaultColorMap = {
+const defaultColorMapToMessageType = {
+	success: {
+		main: colors.green,
+		contrast: colors.black
+	},
 	error: {
-		badge: materialColorMap.pomegrante,
-		message: materialColorMap.alizarin,
-		contrastText: materialColorMap.white
+		main: colors.red,
+		contrast: colors.white
 	},
 	warn: {
-		badge: materialColorMap.orange,
-		message: materialColorMap.sunflower,
-		contrastText: materialColorMap.white
-	},
-	log: {
-		badge: materialColorMap.belizehole,
-		message: materialColorMap.peterriver,
-		contrastText: materialColorMap.white
+		main: colors.yellow,
+		contrast: colors.black
 	},
 	info: {
-		badge: materialColorMap.nephiritis,
-		message: materialColorMap.emerland,
-		contrastText: materialColorMap.white
+		main: colors.blue,
+		contrast: colors.white
+	},
+	log: {
+		main: colors.white,
+		contrast: colors.black
 	}
 };
 
-module.exports = defaultColorMap;
+module.exports = defaultColorMapToMessageType;

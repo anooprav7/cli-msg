@@ -1,99 +1,49 @@
 const chalk = require('chalk');
 const clog = console.log;
 
-const defaultColorMap = require('./defaultColorMap');
+const defaultColorMapToMessageType = require('./defaultColorMap');
+const { repeatCharacterNTimes } = require('./utils');
 
-function initialiseAndReturnMessageTypeFunction(type, typeColorMap) {
-	const badgeColor = typeColorMap.badge ? typeColorMap.badge : typeColorMap.message;
-	const contrastTextColor = typeColorMap.contrastText ? typeColorMap.contrastText : '#000';
-	const messageColor = typeColorMap.message;
+function MessageType(colorObject) {
+	const mainColor = colorObject.main;
+	const contrastColor = colorObject.contrast;
 
-	const badgeStyle = chalk.bgHex(badgeColor).hex(contrastTextColor).bold;
-	const messageStyle = chalk.hex(messageColor);
+	const badgeColor = `bg${mainColor.charAt(0).toUpperCase()}${mainColor.substring(1)}`;
 
-	function messageTypeFunction(...args) {
-		if (args.length === 1) clog(badgeStyle(` ${type.toString().toUpperCase()} `) + messageStyle(` ${args[0]}`));
-		else if (args.length > 1)
-			clog(badgeStyle(` ${args[0].toString().toUpperCase()} `) + messageStyle(` ${args[1]}`));
+	function displayMessage(...args) {
+		if (args.length === 1) {
+			clog(chalk[mainColor](args[0]));
+		} else if (args.length < 1) {
+			throw new Error('No arguments found');
+		} else {
+			const badgeText = args[0];
+			const messageText = args.slice(1).join('');
+			clog(chalk[badgeColor][contrastColor]['bold'](` ${badgeText} `) + chalk[mainColor](` ${messageText} `));
+		}
 	}
-	messageTypeFunction.m = function(message) {
-		clog(messageStyle(`${message}`));
+	displayMessage.b = function(...args) {
+		const badgeText = args.join('');
+		clog(chalk[badgeColor][contrastColor](`${badgeText}`));
 	};
-	messageTypeFunction.b = function(message) {
-		const info = initialiseAndReturnMessageTypeFunction('info', defaultColorMap['info']);
-		if (!typeColorMap.badge) info(`'badge' color key missing in '${type}' type. Using message color instead`);
-		clog(badgeStyle(`${message}`));
+	displayMessage.m = function(...args) {
+		const messageText = args.join('');
+		clog(chalk[mainColor](`${messageText}`));
 	};
-	return messageTypeFunction;
+	return displayMessage;
 }
 
 const indent = {
-	nl: function(count) {
-		// New line
-		for (let i = 0; i < count; i++) process.stdout.write('\n');
-		return this;
-	},
-	tab: function(count) {
-		for (let i = 0; i < count; i++) process.stdout.write('\t');
-		return this;
-	},
-	space: function(count) {
-		for (let i = 0; i < count; i++) process.stdout.write(' ');
-		return this;
-	}
+	nl: repeatCharacterNTimes('\n'),
+	tab: repeatCharacterNTimes('\t'),
+	space: repeatCharacterNTimes(' ')
 };
 
-function initialiseThemedCLI(colorMap = {}) {
-	const mergedColorMap = Object.assign({}, defaultColorMap, colorMap);
-	if (isValidColorMap(colorMap)) {
-		let themed = {};
-		themed.indent = indent;
-		Object.keys(mergedColorMap).map(type => {
-			themed[type] = initialiseAndReturnMessageTypeFunction([type], mergedColorMap[type]);
-		});
-		return themed;
-	}
-}
-/** */
-function isValidColorMap(colorMap) {
-	const error = initialiseAndReturnMessageTypeFunction('error', defaultColorMap['error']);
-	if (typeof colorMap === 'object' && colorMap !== null && !Array.isArray(colorMap)) {
-		// check if each key has message color at least and contrast text color- white
-		let isValid = true;
-		Object.keys(colorMap).every(type => {
-			if (!colorMap[type].message) {
-				//console.log('cmap', type);
-				isValid = false;
-				error(`Mandatory 'message' color key missing in '${type}' type`);
-				return false;
-			}
-		});
-		return isValid;
-	} else {
-		error('ColorMap should be a valid object');
-		return false;
-	}
-}
+const allMessageTypes = Object.keys(defaultColorMapToMessageType).reduce((aggregator, messageType) => {
+	aggregator[messageType] = MessageType(defaultColorMapToMessageType[messageType]);
+	return aggregator;
+}, {});
 
 module.exports = {
-	...initialiseThemedCLI(defaultColorMap),
-	initialiseThemedCLI,
-	isValidColorMap
+	...allMessageTypes,
+	indent
 };
-
-/*
-Usage
-
-    info
-    log 
-    error
-    warn
-    indent
-colorMap
-    sample
-    schema
-        badge - badge and contrast color
-        message
-        mandatory fields
-
-*/
