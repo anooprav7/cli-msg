@@ -1,4 +1,4 @@
-# cli-msg
+# cli-msg &middot; [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/anooprav7/cli-msg/blob/master/LICENSE) [![npm version](https://img.shields.io/npm/v/cli-msg.svg?style=flat)](https://www.npmjs.com/package/cli-msg) [![CircleCI Status](https://circleci.com/gh/anooprav7/cli-msg.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/anooprav7/cli-msg)
 
 > Colored CLI messages for better log messages
 
