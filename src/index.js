@@ -8,6 +8,7 @@ function MessageType(colorObject, messageType) {
 	const mainColor = colorObject.main;
 	const contrastColor = colorObject.contrast;
 
+	// bg color name create from the primary color for chalk support
 	const badgeColor = `bg${mainColor.charAt(0).toUpperCase()}${mainColor.substring(1)}`;
 
 	function displayMessage(...args) {
