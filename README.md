@@ -16,7 +16,7 @@ npm install cli-msg --save
 
 #### Badge
 
-![Badge Image](https://cdn.jsdelivr.net/gh/anooprav7/cli-msg@master/docs/images/many_arguments.png)
+![Badge Image](https://cdn.jsdelivr.net/gh/anooprav7/cli-msg@master/docs/images/b.png)
 
 -   Badge text refers to the text with primary color applied to the background.
 
