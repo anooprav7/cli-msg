@@ -1,18 +1,21 @@
 {
-	"name": "themed-cli",
+	"name": "cli-msg",
 	"version": "0.1.0",
 	"description": "Customizable theme based Terminal log messages",
 	"main": "index.js",
+	"sideEffects": false,
 	"scripts": {
-		"test": "jest --silent"
+		"test": "jest ",
+		"build": "node scripts/prepareBuild.js",
+		"publish": "cd build/ && npm publish --public"
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/anooprav7/themed-cli"
+		"url": "https://github.com/anooprav7/cli-msg"
 	},
 	"keywords": [
 		"color-cli",
-		"themed-cli",
+		"cli-msg",
 		"console",
 		"cli",
 		"print",
@@ -24,7 +27,7 @@
 		"defaultColorMap.js"
 	],
 	"bugs": {
-		"url": "https://github.com/anooprav7/themed-cli/issues"
+		"url": "https://github.com/anooprav7/cli-msg/issues"
 	},
 	"author": "anooprav7@gmail.com",
 	"license": "MIT",
@@ -32,6 +35,22 @@
 		"chalk": "2.4.2"
 	},
 	"devDependencies": {
-		"jest": "24.7.1"
+		"cz-conventional-changelog": "3.0.2",
+		"jest": "24.7.1",
+		"rimraf": "^3.0.0"
+	},
+	"config": {
+		"commitizen": {
+			"path": "./node_modules/cz-conventional-changelog"
+		}
+	},
+	"jest": {
+		"roots": [
+			"<rootDir>/src"
+		],
+		"collectCoverageFrom": [
+			"src/**/*.{js,jsx,ts,tsx}",
+			"!src/**/*.d.ts"
+		]
 	}
 }
