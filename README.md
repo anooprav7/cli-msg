@@ -2,6 +2,8 @@
 
 > Colored CLI messages for better log messages
 
+![Home Image](https://cdn.jsdelivr.net/gh/anooprav7/cli-msg@master/docs/images/home_new.png)
+
 ## Install
 
 ```
