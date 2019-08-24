@@ -6,7 +6,8 @@
 	"sideEffects": false,
 	"scripts": {
 		"test": "jest ",
-		"build": "node scripts/prepareBuild.js"
+		"build": "node scripts/prepareBuild.js",
+		"publish": "cd build/ && npm publish --public"
 	},
 	"repository": {
 		"type": "git",

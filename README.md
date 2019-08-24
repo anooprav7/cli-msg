@@ -1,26 +1,26 @@
-# themed-cli
+# cli-msg
 
-![Home](/images/home.png)
+![Home](/docs/images/home.png)
 
 ## Install
 
 ```
-yarn add themed-cli
+yarn add cli-msg
 
-npm install themed-cli --save
+npm install cli-msg --save
 ```
 
 ## Naming conventions used
 
 #### Badge
 
-![Badge Image](/images/badge.png)
+![Badge Image](/docs/images/badge.png)
 
 -   Badge text refers to the text with primary color applied to the background.
 
 #### Message
 
-![Message Image](/images/badge.png)
+![Message Image](/docs/images/badge.png)
 
 -   Message text refers to the colored text with the transparent background.
 
@@ -29,32 +29,38 @@ npm install themed-cli --save
 ### Message type usage
 
 ```js
-const { info } = require('themed-cli');
+const { success } = require('cli-msg');
 
-info( <badge-text>, <message-text> ) //
-info( <message-text> )               // 'INFO' is set as <badge-text>
-info.b( <only-badge-style-text> )    // Only badge style text, no message text
-info.m( <only-message-style-text> )  // Only message style text, no badge text
-
-Same applies to warn, log, error or any custom defined types.
-
-```
-
-##### Sample usage
-
-```js
-const { message, info, warn, log, error, indent } = require('themed-cli');
-
-success('Lorem ipsum dolor sit amet');
-success('Lorem', 'Lorem ipsum dolor sit amet');
-success.m('Lorem ipsum dolor sit amet');
-success.b('Lorem ipsum dolor sit amet');
-success.wb('Lorem ipsum dolor sit amet');
+// only 1 argument
+success( <message-text> )
 ```
 
 ```js
-const { info, warn, log, error } = require('themed-cli');
+// 2 or more arguments
+// 1st argument is shown in badge text and remaining args shown as one message
+success( <badge-text>, <message-text>[..] )
 ```
+
+```js
+// Specific message styles
+// b - badge style type
+// Only badge style text, no message text
+success.b( <only-badge-style-text> )
+```
+
+```js
+// m - message style type
+// Only message style text, no badge text
+success.m( <only-message-style-text> )
+```
+
+```js
+// wb - with default badge - Eg. info will have 'INFO' as the badge text
+// message with badge text 'SUCCESS'
+success.wb( <only-message-style-text> )
+```
+
+#### Same applies to success, warn, log, error, info message types.
 
 ### indent
 
@@ -66,8 +72,10 @@ This function is used to position the cursor according to your choice using
 
 The inner functions are cascaded.
 
+##### Sample usage
+
 ```js
-const { indent } = require('themed-cli');
+const { indent } = require('cli-msg');
 
 warn.b('Lorem ipsum dolor sit amet');
 indent
@@ -77,14 +85,7 @@ indent
 error.b('Lorem ipsum dolor sit amet');
 ```
 
-![Indent image](/images/indent.png)
-
-##### Sample usage
-
-## TODO
-
--   Add table cli like create-react-app
--   Divider - dotted, dashed
+![Indent image](/docs/images/indent.png)
 
 ## [License](LICENSE)
 
