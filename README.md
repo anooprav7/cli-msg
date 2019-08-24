@@ -1,6 +1,6 @@
 # cli-msg
 
-![Home](/docs/images/home.png)
+![Home](https://cdn.jsdelivr.net/gh/anooprav7/cli-msg@master/docs/images/home.png)
 
 ## Install
 
@@ -14,13 +14,13 @@ npm install cli-msg --save
 
 #### Badge
 
-![Badge Image](/docs/images/badge.png)
+![Badge Image](https://cdn.jsdelivr.net/gh/anooprav7/cli-msg@master/docs/images/badge.png)
 
 -   Badge text refers to the text with primary color applied to the background.
 
 #### Message
 
-![Message Image](/docs/images/badge.png)
+![Message Image](https://cdn.jsdelivr.net/gh/anooprav7/cli-msg@master/docs/images/m.png)
 
 -   Message text refers to the colored text with the transparent background.
 
@@ -35,11 +35,15 @@ const { success } = require('cli-msg');
 success( <message-text> )
 ```
 
+![One Argument](https://cdn.jsdelivr.net/gh/anooprav7/cli-msg@master/docs/images/one_argument.png)
+
 ```js
 // 2 or more arguments
 // 1st argument is shown in badge text and remaining args shown as one message
 success( <badge-text>, <message-text>[..] )
 ```
+
+![Many Arguments](https://cdn.jsdelivr.net/gh/anooprav7/cli-msg@master/docs/images/many_arguments.png)
 
 ```js
 // Specific message styles

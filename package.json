@@ -7,7 +7,8 @@
 	"scripts": {
 		"test": "jest ",
 		"build": "node scripts/prepareBuild.js",
-		"publish": "cd build/ && npm publish --public"
+		"publish": "cd build/ && npm publish --public",
+		"sample": "node sampleUsage.js"
 	},
 	"repository": {
 		"type": "git",

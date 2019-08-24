@@ -46,11 +46,6 @@ const indent = {
 	space: repeatCharacterNTimes(' ')
 };
 
-// const allMessageTypes = Object.keys(defaultColorMapToMessageType).reduce((aggregator, messageType) => {
-// 	aggregator[messageType] = MessageType(defaultColorMapToMessageType[messageType]);
-// 	return aggregator;
-// }, {});
-
 const success = MessageType(defaultColorMapToMessageType.success, 'success');
 const error = MessageType(defaultColorMapToMessageType.error, 'error');
 const warn = MessageType(defaultColorMapToMessageType.warn, 'warn');
