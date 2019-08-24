@@ -4,7 +4,7 @@ const clog = console.log;
 const defaultColorMapToMessageType = require('./defaultColorMap');
 const { repeatCharacterNTimes } = require('./utils');
 
-function MessageType(colorObject) {
+function MessageType(colorObject, messageType) {
 	const mainColor = colorObject.main;
 	const contrastColor = colorObject.contrast;
 
@@ -29,6 +29,13 @@ function MessageType(colorObject) {
 		const messageText = args.join('');
 		clog(chalk[mainColor](`${messageText}`));
 	};
+	displayMessage.wb = function(...args) {
+		const messageText = args.join('');
+		clog(
+			chalk[badgeColor][contrastColor]['bold'](` ${messageType.toUpperCase()} `) +
+				chalk[mainColor](` ${messageText}`)
+		);
+	};
 	return displayMessage;
 }
 
@@ -38,12 +45,22 @@ const indent = {
 	space: repeatCharacterNTimes(' ')
 };
 
-const allMessageTypes = Object.keys(defaultColorMapToMessageType).reduce((aggregator, messageType) => {
-	aggregator[messageType] = MessageType(defaultColorMapToMessageType[messageType]);
-	return aggregator;
-}, {});
+// const allMessageTypes = Object.keys(defaultColorMapToMessageType).reduce((aggregator, messageType) => {
+// 	aggregator[messageType] = MessageType(defaultColorMapToMessageType[messageType]);
+// 	return aggregator;
+// }, {});
+
+const success = MessageType(defaultColorMapToMessageType.success, 'success');
+const error = MessageType(defaultColorMapToMessageType.error, 'error');
+const warn = MessageType(defaultColorMapToMessageType.warn, 'warn');
+const info = MessageType(defaultColorMapToMessageType.info, 'info');
+const log = MessageType(defaultColorMapToMessageType.log, 'log');
 
 module.exports = {
-	...allMessageTypes,
+	success,
+	error,
+	warn,
+	info,
+	log,
 	indent
 };
