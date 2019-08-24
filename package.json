@@ -1,5 +1,5 @@
 {
-	"name": "themed-cli",
+	"name": "cli-msg",
 	"version": "0.1.0",
 	"description": "Customizable theme based Terminal log messages",
 	"main": "index.js",
@@ -10,11 +10,11 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/anooprav7/themed-cli"
+		"url": "https://github.com/anooprav7/cli-msg"
 	},
 	"keywords": [
 		"color-cli",
-		"themed-cli",
+		"cli-msg",
 		"console",
 		"cli",
 		"print",
@@ -26,7 +26,7 @@
 		"defaultColorMap.js"
 	],
 	"bugs": {
-		"url": "https://github.com/anooprav7/themed-cli/issues"
+		"url": "https://github.com/anooprav7/cli-msg/issues"
 	},
 	"author": "anooprav7@gmail.com",
 	"license": "MIT",
