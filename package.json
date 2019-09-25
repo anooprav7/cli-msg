@@ -8,7 +8,6 @@
 		"test": "jest ",
 		"build": "node scripts/prepareBuild.js",
 		"sample": "node sampleUsage.js",
-		"publish.package": "cd build/ && npm publish --public",
 		"bp": "yarn build && yarn publish.package"
 	},
 	"repository": {
@@ -54,6 +53,12 @@
 		"collectCoverageFrom": [
 			"src/**/*.{js,jsx,ts,tsx}",
 			"!src/**/*.d.ts"
+		],
+		"modulePathIgnorePatterns": [
+			"<rootDir>/build/"
+		],
+		"testPathIgnorePatterns": [
+			"<rootDir>[/\\\\](build|node_modules)[/\\\\]"
 		]
 	}
 }
